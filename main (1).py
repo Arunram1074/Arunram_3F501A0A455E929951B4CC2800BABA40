@@ -1,16 +1,20 @@
-# Recursive function to calculate factorial
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+# leap year
 
-# Input from the user
-num = int(input("Enter a non-negative integer: "))
+"""
+year % 4 == 0 &
+year % 100 != 0 / 
+year % 400 == 0 
 
-# Check if the input is valid
-if num < 0:
-    print("Please enter a non-negative integer.")
+"""
+def isLeapYear(year):
+  if (year % 4 == 0 and year % 100 !=0) or year % 400 ==0:
+    return True
+  else:
+    return False
+
+year = int(input("Enter a year : "))
+
+if isLeapYear(year):
+  print('{} is a leap year.'.format(year))
 else:
-    result = factorial(num)
-    print(f"{num}! = {result}")
+  print('{} is not a leap year.'.format(year))
